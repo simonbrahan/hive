@@ -1,0 +1,23 @@
+svg {
+    display:block;
+    width:1200px;
+    height:700px;
+    margin:20px auto;
+    border: 1px solid #cccccc;
+}
+
+#hex-bg polyline {
+    stroke: #ccccee;
+    stroke-width: 1;
+    fill: transparent;
+}
+
+.game-bg {
+    fill: url(#hex-bg);
+}
+
+polygon {
+    stroke: #cc0000;
+    stroke-width: 2;
+    fill: transparent;
+}
