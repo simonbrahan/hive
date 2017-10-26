@@ -1,3 +1,5 @@
+import Layout from './Layout';
+
 const HEX_ANGLES = [
     radians(0),
     radians(60),
@@ -45,4 +47,9 @@ function drawHex(svg, centreX, centreY, radius) {
     drawPolygon(svg, points);
 }
 
-export default drawHex;
+function drawHexNearest(svg, centreX, centreY, radius) {
+    var nearestHex = Layout.hexToPixel(Layout.pixelToHex(centreX, centreY));
+    drawHex(svg, nearestHex.x, nearestHex.y, 20);
+}
+
+export default drawHexNearest;
