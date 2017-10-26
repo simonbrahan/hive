@@ -18,7 +18,7 @@ const Layout = {
 
     ORIGIN: LayoutPoint(600, 350),
 
-    hexToPixel: function(hexPoint) {
+    hexToPixel(hexPoint) {
         var xRelativeToOrigin = (
             Layout.ORIENTATION.f0 * hexPoint.q +
             Layout.ORIENTATION.f1 * hexPoint.r
@@ -46,6 +46,14 @@ const Layout = {
         var r = Layout.ORIENTATION.b2 * pointRelativeToOrigin.x + Layout.ORIENTATION.b3 * pointRelativeToOrigin.y;
 
         return Hex.fromFractionalPoint(q, r);
+    },
+
+    sameHex(oldX, oldY, newX, newY)
+    {
+        let oldPos = Layout.pixelToHex(oldX, oldY);
+        let newPos = Layout.pixelToHex(newX, newY);
+
+        return JSON.stringify(newPos) == JSON.stringify(oldPos);
     }
 };
 
